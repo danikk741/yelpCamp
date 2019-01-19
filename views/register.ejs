@@ -1,0 +1,53 @@
+<%include partials/header%>
+
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-signin" action="/register" method="POST" enctype="multipart/form-data">
+            <h1 class="h3 mb-3 font-weight-normal text-center">Sigh Up</h1>
+
+            <div class="form-group">
+                <label for="inputUsername" class="sr-only">Username</label>
+                <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus name="username">
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
+            </div>
+
+            <div class="form-group">
+                <label for="firstName" class="sr-only">First Name</label>
+                <input class="form-control" id="firstName" type="text" name="firstName" placeholder="First Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName" class="sr-only">Last Name</label>
+                <input class="form-control" id="lastName" type="text" name="lastName" placeholder="Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="sr-only">Email</label>
+                <input class="form-control" id="email" type="email" name="email" placeholder="Email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="avatar">Avatar Image: </label>
+                <input id="avatar" type="file" name="image" accept="image/*" placeholder="Avatar Image" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adminCode" class="sr-only">Admin Code:</label>
+                <input class="form-control" id="adminCode" type="text" name="adminCode" placeholder="Admin Code">
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+            </div>
+            
+        </form>
+        <div class="form-under">
+            <a href="/campgrounds">Go Back<br></a>
+        </div>
+    </div>
+</div>
+<%include partials/footer%>

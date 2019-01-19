@@ -1,0 +1,38 @@
+<%include ../partials/header%>
+
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-signin" action="/users/<%=user._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h1 class="h3 mb-3 font-weight-normal text-center">Edit Profile</h1>
+
+            <div class="form-group">
+                <label for="firstName" class="sr-only">First Name</label>
+                <input class="form-control" id="firstName" type="text" name="user[firstName]" placeholder="First Name" required value="<%= user.firstName %>">
+            </div><!--form-group-->
+            
+            <div class="form-group">
+                <label for="lastName" class="sr-only">Last Name</label>
+                <input class="form-control" id="lastName" type="text" name="user[lastName]" placeholder="Last Name" required value="<%= user.lastName %>">
+            </div><!--form-group-->
+
+            <div class="form-group">
+                <label for="email" class="sr-only">Email</label>
+                <input class="form-control" id="email" type="email" name="user[email]" placeholder="Email" required value="<%= user.email %>">
+            </div><!--form-group-->
+
+            <div class="form-group">
+                <label for="avatar">Avatar Image</label>
+                <input id="avatar" type="file" name="image" placeholder="Avatar Image">
+            </div><!--form-group-->
+
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Edit</button>
+            </div><!--form-group-->
+        </form>
+        <div class="form-under">
+            <a href="/users/<%= user._id %>">Go Back<br></a>
+        </div>
+    </div>
+</div>
+
+<%include ../partials/footer%>

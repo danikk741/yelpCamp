@@ -1,0 +1,31 @@
+<%include ../partials/header%>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%=user.firstName + ' ' + user.lastName%></h1>
+        <div class="card">
+            <img class="card-img-top" src="<%=user.avatar%>" alt="user profile image">
+            <div class="card-body">
+                <div class="card-title">
+                    <a href="mailto:<%=user.email%>"><%=user.email%></a>
+                    <% if((currentUser && user._id.equals(currentUser._id)) || (currentUser && currentUser.isAdmin)) { %>
+                        <br><a class="btn btn-warning" href="/users/<%=user._id%>/edit">Edit Profile</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis officiis repellendus voluptas incidunt exercitationem fugiat possimus, saepe totam enim temporibus quaerat eveniet ut, delectus atque obcaecati, maxime eligendi molestiae sequi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis officiis repellendus voluptas incidunt exercitationem fugiat possimus, saepe totam enim temporibus quaerat eveniet ut, delectus atque obcaecati, maxime eligendi molestiae sequi!</p>
+    </div>
+    <div class="col-md-8">
+        <h3><%= user.firstName %>'s campgrounds:</h3>
+        <ul>
+            <% campgrounds.forEach(campground => {%>
+                <li><a href="/campgrounds/<%= campground.id %>"><%= campground.name %></a></li>
+            <% }); %>
+        </ul>
+        
+    </div>
+</div>
+
+<%include ../partials/footer%>
